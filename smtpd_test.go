@@ -500,7 +500,7 @@ func TestInvalidListenAddress(t *testing.T) {
 	server := &smtpd.Server{}
 
 	err := server.ListenAndServe("pleasedontwork")
-	if err.Error() != "listen tcp: missing port in address pleasedontwork" {
+	if err.Error() != "listen tcp: address pleasedontwork: missing port in address" {
 		t.Fatalf("Unexpected port binding: %s", err)
 	}
 }
